@@ -29,6 +29,12 @@
     "target": "es2016",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "additional.d.ts", "**/*.tsx", "**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "additional.d.ts",
+    "**/*.tsx",
+    "**/*.ts",
+    "src/components/ProgressSongBar"
+  ],
   "exclude": ["node_modules"]
 }

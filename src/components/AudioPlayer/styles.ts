@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { ProgressBar } from '../ProgressSongBar/styles';
+import Previous from '$/assets/icons/previous.svg';
 
 export const AudioPlayerContainer = styled.div`
   height: 5rem;
@@ -13,9 +15,15 @@ export const AudioPlayerContainer = styled.div`
 `;
 
 export const ThumbnailSong = styled.img``;
-export const SongControllers = styled.div``;
-export const ProgressSongBar = styled.div``;
+export const SongControllers = styled.div`
+  position: relative;
+  left: 50rem;
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+`;
 
-export const MainPlayButton = styled.div``;
-export const PrevButton = styled.div``;
-export const NextButton = styled.div``;
+// export const ProgressSongBar = styled(ProgressBar)``;
+
+export const BarPlayButton = styled.div``;
