@@ -11,3 +11,11 @@ export const AudioPlayerContainer = styled.div`
   display: flex;
   border-radius: 1.5rem 1.5rem 0px 0px;
 `;
+
+export const ThumbnailSong = styled.img``;
+export const SongControllers = styled.div``;
+export const ProgressSongBar = styled.div``;
+
+export const MainPlayButton = styled.div``;
+export const PrevButton = styled.div``;
+export const NextButton = styled.div``;

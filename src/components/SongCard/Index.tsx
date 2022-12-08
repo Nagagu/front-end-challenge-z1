@@ -11,15 +11,33 @@ import {
   SongDetailsWrapper,
   SongDuration,
   SongGenre,
-  StyledSVG,
   UnFavButton,
 } from './styles';
 import { SongCardProps } from './types';
+import { useContext } from 'react';
 import play from '$/assets/play.png';
 import { Text } from '../Text';
+import { AppContext } from '../../context/AppContext';
 
 export const SongCard = ({ song }: SongCardProps): JSX.Element => {
-  console.log(song);
+  const { setPlayingSong } = useContext(AppContext);
+  const handleOpenAudioPlayer = () => {
+    setPlayingSong &&
+      setPlayingSong({
+        name: song.name,
+        id: song.id,
+        image: song.image,
+        description: song.description,
+        audio: {
+          id: song.audio.id,
+          url: song.audio.url,
+          autoplay: true,
+        },
+        genre: song.genre,
+        author: { name: song.author.name },
+      });
+  };
+
   return (
     <Container>
       <CardImage src={song.image} />
@@ -37,9 +55,15 @@ export const SongCard = ({ song }: SongCardProps): JSX.Element => {
           {song.description}
         </Text>
         <SongDetailsWrapper>
-          <PlayButton />
-          <SongDuration>5 min</SongDuration>
-          <SongGenre> {song.genre} </SongGenre>
+          <PlayButton onClick={handleOpenAudioPlayer} />
+          <SongDuration tag="span" variant="caption">
+            5 min
+          </SongDuration>
+          <SongGenre>
+            {' '}
+            {song.genre.charAt(0).toUpperCase() +
+              song.genre.slice(1).toLowerCase().replace('_', ' ')}
+          </SongGenre>
         </SongDetailsWrapper>
       </CardTextWrapper>
       <UnFavButton />

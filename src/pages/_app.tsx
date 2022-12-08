@@ -5,6 +5,7 @@ import theme from '$/styles/themes';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { AppContextProvider } from '../context/AppContext';
 
 const client = new ApolloClient({
   uri: 'https://api-frontend-challenge.herokuapp.com/graphql',
@@ -14,13 +15,15 @@ const client = new ApolloClient({
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Layout>
-        <ApolloProvider client={client}>
-          <Component {...pageProps} />
-        </ApolloProvider>
-      </Layout>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <AppContextProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
+      </AppContextProvider>
+    </ApolloProvider>
   );
 }
