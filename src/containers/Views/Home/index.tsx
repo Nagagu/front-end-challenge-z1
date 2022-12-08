@@ -1,4 +1,5 @@
 import { Text } from '$/components/Text';
+import { AudioPlayer } from '../../../components/AudioPlayer';
 import { SongList } from '../../../components/SongList';
 
 import { Container, SearchInput } from './styles';
@@ -11,6 +12,7 @@ function HomeView(): JSX.Element {
       </Text>
       <SearchInput placeholder="Search by title, genre..." />
       <SongList />
+      <AudioPlayer />
     </Container>
   );
 }

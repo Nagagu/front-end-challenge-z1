@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import SolidHeart from '$/assets/icons/solid-heart.svg';
 import ThinHeart from '$/assets/icons/thin-heart.svg';
+import play from '$/assets/icons/playButton.svg';
 
 export const Container = styled.div`
   margin: 30px 0;
@@ -84,11 +85,26 @@ export const UnFavButton = styled(ThinHeart)`
     filter: drop-shadow(0 0 0.125rem #bf508b);
   }
 `;
-export const PlayButton = styled.img`
-  display: block;
-  width: 3rem;
-  height: 3rem;
-  margin-left: -5px;
+// export const PlayButton = styled.img`
+//   display: block;
+//   width: 3rem;
+//   height: 3rem;
+//   margin-left: -5px;
+
+//   &:hover {
+//     -ms-transform: scale(1.05); /* IE 9 */
+//     -webkit-transform: scale(1.05); /* Safari 3-8 */
+//     transform: scale(1.05);
+//     cursor: pointer;
+//   }
+// `;
+
+export const PlayButton = styled(play)`
+  width: 2.5em;
+  height: 2.5em;
+  & path {
+    fill: ${({ theme }) => theme.color.grayscale900};
+  }
   &:hover {
     -ms-transform: scale(1.05); /* IE 9 */
     -webkit-transform: scale(1.05); /* Safari 3-8 */

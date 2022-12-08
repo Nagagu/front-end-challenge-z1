@@ -11,6 +11,7 @@ import {
   SongDetailsWrapper,
   SongDuration,
   SongGenre,
+  StyledSVG,
   UnFavButton,
 } from './styles';
 import { SongCardProps } from './types';
@@ -36,7 +37,7 @@ export const SongCard = ({ song }: SongCardProps): JSX.Element => {
           {song.description}
         </Text>
         <SongDetailsWrapper>
-          <PlayButton src={play} alt="Z1 Digital Studio" />
+          <PlayButton />
           <SongDuration>5 min</SongDuration>
           <SongGenre> {song.genre} </SongGenre>
         </SongDetailsWrapper>
