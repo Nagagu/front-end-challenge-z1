@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { ProgressSongBar } from '$/components/ProgressSongBar';
@@ -8,7 +8,9 @@ import { PlayButton as BarPlayButton } from '$/components/PlayButton';
 import { AudioPlayerContainer, SongControllers, ThumbnailSong } from './styles';
 
 export const AudioPlayer = () => {
-  const { playingSong } = useContext(AppContext);
+  const { playingSong, setPlayingSong, audioRef } = useContext(AppContext);
+  // const inputRef = React.useRef<HTMLInputElement>(null)
+
   return (
     <AudioPlayerContainer>
       <ThumbnailSong />
@@ -18,7 +20,12 @@ export const AudioPlayer = () => {
         <NextButton />
       </SongControllers>
       <ProgressSongBar />
-      {/* <audio src={playingSong?.audio.url} autoPlay controls></audio> */}
+      <audio
+        ref={audioRef as any}
+        src={playingSong?.audio.url}
+        autoPlay
+        controls
+      ></audio>
     </AudioPlayerContainer>
   );
 };

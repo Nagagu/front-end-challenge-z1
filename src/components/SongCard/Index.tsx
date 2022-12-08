@@ -22,20 +22,7 @@ import { AppContext } from '../../context/AppContext';
 export const SongCard = ({ song }: SongCardProps): JSX.Element => {
   const { setPlayingSong } = useContext(AppContext);
   const handleOpenAudioPlayer = () => {
-    setPlayingSong &&
-      setPlayingSong({
-        name: song.name,
-        id: song.id,
-        image: song.image,
-        description: song.description,
-        audio: {
-          id: song.audio.id,
-          url: song.audio.url,
-          autoplay: true,
-        },
-        genre: song.genre,
-        author: { name: song.author.name },
-      });
+    setPlayingSong && setPlayingSong(song);
   };
 
   return (

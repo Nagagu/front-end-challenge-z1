@@ -1,5 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AppContext } from '../context/AppContext';
 import { Data } from './types';
 
 // const useFetch = () => {
@@ -47,6 +48,8 @@ const GET_SONGS = gql`
 
 export const useFetch = () => {
   const { loading, error, data } = useQuery<Data>(GET_SONGS);
+  const { setSongsList } = useContext(AppContext);
+  setSongsList && setSongsList(data);
   return { loading, error, data };
   // console.log(data);
   // return <>{data?.songs.songs.map((o) => o.name)}</>;
