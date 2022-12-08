@@ -26,6 +26,20 @@ const GET_SONGS = gql`
       songs {
         id
         name
+        image
+        description
+        genre
+        audio {
+          url
+        }
+        author {
+          name
+        }
+        audio {
+          id
+          url
+          autoPlay
+        }
       }
     }
   }

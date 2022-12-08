@@ -9,17 +9,18 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 const client = new ApolloClient({
   uri: 'https://api-frontend-challenge.herokuapp.com/graphql',
   cache: new InMemoryCache(),
+  connectToDevTools: true,
 });
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout>
+        <ApolloProvider client={client}>
           <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
-    </ApolloProvider>
+        </ApolloProvider>
+      </Layout>
+    </ThemeProvider>
   );
 }
