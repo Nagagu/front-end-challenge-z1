@@ -1,0 +1,3 @@
+export type SongCard = {
+  eee: '';
+};
