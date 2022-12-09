@@ -18,6 +18,7 @@ export const CardImage = styled.img`
   background-size: cover;
   width: 12em;
   height: 10em;
+  object-fit: cover;
 `;
 
 export const CardTextWrapper = styled.div`

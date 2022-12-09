@@ -5,7 +5,8 @@ import { ProgressSongBar } from '$/components/ProgressSongBar';
 import { NextButton } from '$/components/NextButton';
 import { PreviousButton } from '$/components/PreviousButton';
 import { PlayButton as BarPlayButton } from '$/components/PlayButton';
-import { AudioPlayerContainer, SongControllers, ThumbnailSong } from './styles';
+import { AudioPlayerContainer, SongControllers } from './styles';
+import { DetailsSong } from '../DetailsSong';
 
 export const AudioPlayer = () => {
   const { playingSong, audioRef } = useContext(AppContext);
@@ -13,7 +14,7 @@ export const AudioPlayer = () => {
 
   return (
     <AudioPlayerContainer>
-      <ThumbnailSong />
+      <DetailsSong />
       <SongControllers>
         <PreviousButton />
         <BarPlayButton />
@@ -24,6 +25,10 @@ export const AudioPlayer = () => {
         ref={audioRef as LegacyRef<HTMLAudioElement>}
         src={playingSong?.audio.url}
         autoPlay
+        // onPlaying={(event) => {
+        //   console.log(event);
+        // }}
+        // onPause
         controls
       ></audio>
     </AudioPlayerContainer>

@@ -66,8 +66,8 @@ export const MainMenuItem = styled.li<StyledMenuItemProps>`
 
 export const Thumbnail = styled.img`
   display: block;
-  width: 2rem;
-  height: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
 
   object-fit: cover;
   overflow: hidden;
