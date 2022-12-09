@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { LegacyRef, useRef } from 'react';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { ProgressSongBar } from '$/components/ProgressSongBar';
@@ -8,7 +8,7 @@ import { PlayButton as BarPlayButton } from '$/components/PlayButton';
 import { AudioPlayerContainer, SongControllers, ThumbnailSong } from './styles';
 
 export const AudioPlayer = () => {
-  const { playingSong, setPlayingSong, audioRef } = useContext(AppContext);
+  const { playingSong, audioRef } = useContext(AppContext);
   // const inputRef = React.useRef<HTMLInputElement>(null)
 
   return (
@@ -21,7 +21,7 @@ export const AudioPlayer = () => {
       </SongControllers>
       <ProgressSongBar />
       <audio
-        ref={audioRef as any}
+        ref={audioRef as LegacyRef<HTMLAudioElement>}
         src={playingSong?.audio.url}
         autoPlay
         controls

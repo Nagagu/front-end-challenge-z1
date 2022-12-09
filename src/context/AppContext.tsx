@@ -6,7 +6,7 @@ type AppContextProps = {
   setPlayingSong?: (song: Song | undefined) => void;
   songsList?: Data;
   setSongsList?: (songsList: Data | undefined) => void;
-  audioRef?: React.LegacyRef<HTMLAudioElement | undefined>;
+  audioRef?: React.MutableRefObject<HTMLAudioElement | undefined>;
 };
 export const AppContext = createContext<AppContextProps>({});
 
