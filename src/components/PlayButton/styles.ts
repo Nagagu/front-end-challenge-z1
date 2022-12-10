@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Play from '$/assets/icons/playButton.svg';
 import Pause from '$/assets/icons/pause.svg';
+
 export const PlayButton = styled(Play)`
   width: 3em;
   cursor: pointer;
@@ -15,6 +16,7 @@ export const PlayButton = styled(Play)`
     filter: drop-shadow(0 0 0.125rem #bf508b);
   }
 `;
+
 export const PauseButton = styled(Pause)`
   width: 3em;
   cursor: pointer;

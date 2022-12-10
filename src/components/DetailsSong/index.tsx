@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
-import { Container, SongInfo, Thumbnail } from './styles';
+import { Container, SongInfo, SongName, Thumbnail } from './styles';
 
 import React from 'react';
 
@@ -12,10 +12,10 @@ export const DetailsSong = () => {
     <Container>
       <Thumbnail src={playingSong?.image} alt="Song Image" />
       <SongInfo>
-        {/* <Text tag="p" variant="captionBold">
+        <SongName tag="p" variant="captionBold">
           <>{playingSong?.name}</>
-        </Text>
-        <Text tag="p" variant="caption">
+        </SongName>
+        {/* <Text tag="p" variant="caption">
           <>{playingSong?.author}</>
         </Text> */}
       </SongInfo>

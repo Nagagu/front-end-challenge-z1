@@ -4,13 +4,21 @@ import ThinHeart from '$/assets/icons/thin-heart.svg';
 import play from '$/assets/icons/playButton.svg';
 import { Text } from '../Text';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  display: flex;
+`;
 
 export const ProgressBar = styled.input`
   display: flex;
   left: 74rem;
-  position: absolute;
-  margin: 2.8rem;
+
+  margin: 3.2rem 2.8rem;
   width: 40rem;
   height: 0.3rem;
+`;
+
+export const Duration = styled.div`
+  color: white;
+  align-self: center;
+  display: flex;
 `;

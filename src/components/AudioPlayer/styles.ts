@@ -11,15 +11,15 @@ export const AudioPlayerContainer = styled.div`
   //#282858;
   position: fixed;
   display: flex;
+  justify-content: space-between;
   border-radius: 1.5rem 1.5rem 0px 0px;
 `;
 export const SongControllers = styled.div`
-  position: relative;
-  left: 50rem;
   width: 10rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 1.5rem;
+  margin-top: 0.8rem;
+  margin-left: 35rem;
 `;
 
 // export const ProgressSongBar = styled(ProgressBar)``;

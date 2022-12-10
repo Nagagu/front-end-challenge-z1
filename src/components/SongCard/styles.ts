@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import SolidHeart from '$/assets/icons/solid-heart.svg';
-import ThinHeart from '$/assets/icons/thin-heart.svg';
 import play from '$/assets/icons/playButton.svg';
 import { Text } from '../Text';
 
@@ -10,6 +8,7 @@ export const Container = styled.div`
   grid-template-columns: 190px;
   grid-template-rows: 12em;
   grid-template-areas: 'image text button';
+  justify-content: space-between;
 `;
 
 export const CardImage = styled.img`
@@ -29,6 +28,10 @@ export const CardTextWrapper = styled.div`
   justify-content: space-between;
 `;
 
+export const InfoSongWrapper = styled.div`
+  display: flex;
+`;
+
 export const SongDetailsWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -36,13 +39,13 @@ export const SongDetailsWrapper = styled.div`
 
 export const SongDuration = styled(Text)`
   font-size: 0.8rem;
-  margin: 0rem 1rem 0rem 1rem;
+  margin: 0rem 1rem 0.5rem 1rem;
 `;
 
 export const SongGenre = styled.span`
   background-color: #b4e6fb82;
   border-radius: 10rem;
-  padding: 0.3rem 0.5rem 0rem 0.5rem;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
   font-size: 0.8rem;
 `;
 
@@ -57,21 +60,6 @@ export const CardTextBody = styled.p`
   font-weight: 300;
 `;
 
-export const FavButton = styled(SolidHeart)`
-  width: 2em;
-  cursor: pointer;
-  &:hover {
-    filter: drop-shadow(0 0 0.125rem #bf508b);
-  }
-`;
-
-export const UnFavButton = styled(ThinHeart)`
-  width: 2em;
-  cursor: pointer;
-  &:hover {
-    filter: drop-shadow(0 0 0.125rem #bf508b);
-  }
-`;
 // export const PlayButton = styled.img`
 //   display: block;
 //   width: 3rem;

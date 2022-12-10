@@ -66,16 +66,12 @@ export const MainMenuItem = styled.li<StyledMenuItemProps>`
 
 export const Thumbnail = styled.img`
   display: block;
-  width: 3.5rem;
-  height: 3.5rem;
-
+  width: 2rem;
+  height: 2rem;
   object-fit: cover;
   overflow: hidden;
-
   font-size: 0.7rem;
-
   background-color: ${({ theme }) => theme.color.grayscale100};
-
   border-radius: 0.375rem;
   margin-inline-end: 0.5rem;
 `;

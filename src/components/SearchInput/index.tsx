@@ -1,14 +1,25 @@
+import { useState } from 'react';
 import { Container, Input, SearchLineIcon } from './styles';
 import { SearchInputProps } from './types';
 
-export const SearchInput = ({ placeholder, className }: SearchInputProps) => (
-  <Container className={className}>
-    <SearchLineIcon />
-    <Input
-      name="search"
-      label="search"
-      hideLabel={true}
-      placeholder={placeholder}
-    />
-  </Container>
-);
+export const SearchInput = ({ placeholder, className }: SearchInputProps) => {
+  const [searchVal, setSearchVal] = useState('');
+
+  const handleInput = (e: any) => {
+    setSearchVal(e.target.value);
+  };
+
+  return (
+    <Container className={className}>
+      <SearchLineIcon />
+      <Input
+        onChange={handleInput}
+        value={searchVal}
+        name="search"
+        label="search"
+        hideLabel={true}
+        placeholder={placeholder}
+      />
+    </Container>
+  );
+};

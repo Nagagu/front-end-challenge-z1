@@ -6,12 +6,12 @@ import { PauseButton as PauseButtonDefault } from './styles';
 
 export const PlayButton = () => {
   const audioManager = useAudioManager();
-  // return <PlayButtonDefault onClick={() => audioManager.PlaySong()} />;
   const handleCanPlaySong = () => {
     audioManager.IsPlayingSong()
       ? audioManager.PauseSong()
       : audioManager.PlaySong();
   };
+
   return audioManager.IsPlayingSong() ? (
     <PauseButtonDefault onClick={handleCanPlaySong} />
   ) : (

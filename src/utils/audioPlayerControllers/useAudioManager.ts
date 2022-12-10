@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { Song } from '../../service/types';
+import Play from '$/assets/icons/playButton.svg';
+import Pause from '$/assets/icons/pause.svg';
 
 export const useAudioManager = () => {
   const { songsList, playingSong, setPlayingSong } = useContext(AppContext);
@@ -32,5 +34,21 @@ export const useAudioManager = () => {
 
   const IsPlayingSong = () => !audioRef?.current?.paused;
 
-  return { GoNextSong, GoPreviousSong, PlaySong, PauseSong, IsPlayingSong };
+  const GetDuration = () => {
+    audioRef?.current?.duration ?? 0;
+  };
+
+  // const getControllerIcon = () => {
+  //   let icon = IsPlayingSong() ? Play : Pause;
+  //   return icon;
+  // };
+  return {
+    GoNextSong,
+    GoPreviousSong,
+    PlaySong,
+    PauseSong,
+    IsPlayingSong,
+    GetDuration,
+    // getControllerIcon,
+  };
 };

@@ -25,11 +25,6 @@ export const AudioPlayer = () => {
         ref={audioRef as LegacyRef<HTMLAudioElement>}
         src={playingSong?.audio.url}
         autoPlay
-        // onPlaying={(event) => {
-        //   console.log(event);
-        // }}
-        // onPause
-        controls
       ></audio>
     </AudioPlayerContainer>
   );
