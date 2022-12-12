@@ -4,16 +4,11 @@ import { Container, Duration, ProgressBar } from './styles';
 import { AppContext } from '../../context/AppContext';
 
 export const ProgressSongBar = () => {
-  const { audioRef, GetDuration } = useContext(AppContext);
+  const { audioRef, duration, currentTime } = useContext(AppContext);
   const progressBar = useRef(null); // reference our progress bar
-  const [duration, setDuration] = useState<number | undefined>(0);
-  console.log(audioRef?.current?.duration);
-  useEffect(() => {
-    const seconds =
-      audioRef?.current && Math.floor(audioRef?.current?.duration);
-    setDuration(seconds);
-    // progressBar?.current.max = seconds;
-  }, [audioRef?.current?.onloadedmetadata, audioRef?.current?.readyState]);
+  // const [duration, setDuration] = useState<number | undefined>(0);
+
+  console.log(duration);
 
   const calculateTime = (secs: number) => {
     const minutes = Math.floor(secs / 60);
@@ -23,24 +18,9 @@ export const ProgressSongBar = () => {
     return `${returnedMinutes}:${returnedSeconds}`;
   };
 
-  // const changeRange = () => {
-  //   audioRef?.current?.currentTime = progressBar?.current?.value;
-  //   changePlayerCurrentTime();
-  // };
-
-  // const changePlayerCurrentTime = () => {
-  //   progressBar?.current?.style.setProperty(
-  //     '--seek-before-width',
-  //     `${(progressBar?.current?.value / duration!) * 100}%`,
-  //   );
-  //   setCurrentTime(progressBar?.current?.value);
-  // };
   return (
     <Container>
-      <Duration>
-        {/* {GetDuration && !isNaN(duration) && calculateTime(duration!)} */}
-        {calculateTime(duration!)}
-      </Duration>
+      <Duration>{calculateTime(currentTime ?? 0)}</Duration>
       <ProgressBar
         type="range"
         // value={props.value}
@@ -50,6 +30,7 @@ export const ProgressSongBar = () => {
         // onMouseUp={props.onMouseUp}
         // onTouchEnd={props.onTouchEnd}
       />
+      <Duration>{calculateTime(duration ?? 0)}</Duration>
     </Container>
   );
 };

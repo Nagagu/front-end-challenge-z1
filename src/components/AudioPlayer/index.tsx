@@ -9,7 +9,7 @@ import { AudioPlayerContainer, SongControllers } from './styles';
 import { DetailsSong } from '../DetailsSong';
 
 export const AudioPlayer = () => {
-  const { playingSong, audioRef } = useContext(AppContext);
+  //const { playingSong, audioRef } = useContext(AppContext);
   // const inputRef = React.useRef<HTMLInputElement>(null)
 
   return (
@@ -21,11 +21,11 @@ export const AudioPlayer = () => {
         <NextButton />
       </SongControllers>
       <ProgressSongBar />
-      <audio
+      {/* <audio
         ref={audioRef as LegacyRef<HTMLAudioElement>}
         src={playingSong?.audio.url}
         autoPlay
-      ></audio>
+      ></audio> */}
     </AudioPlayerContainer>
   );
 };

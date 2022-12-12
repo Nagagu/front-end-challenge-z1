@@ -4,11 +4,10 @@ import { SongCard } from '../SongCard';
 
 export const SongList = (): JSX.Element => {
   const { data } = useFetch();
-  console.log(data);
   return (
     <>
       {data?.songs.songs.map((song) => {
-        return <SongCard song={song} />;
+        return <SongCard key={song.id} song={song} />;
       })}
     </>
   );
