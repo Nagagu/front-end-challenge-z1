@@ -15,7 +15,7 @@ export const CardImage = styled.img`
   grid-area: image;
   border-radius: 15px;
   background-size: cover;
-  width: 12em;
+  width: 10em;
   height: 10em;
   object-fit: cover;
 `;
@@ -26,6 +26,7 @@ export const CardTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 9.5rem;
 `;
 
 export const InfoSongWrapper = styled.div`
@@ -35,11 +36,7 @@ export const InfoSongWrapper = styled.div`
 export const SongDetailsWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
-
-export const SongDuration = styled(Text)`
-  font-size: 0.8rem;
-  margin: 0rem 1rem 0.5rem 1rem;
+  margin-top: 0.8rem;
 `;
 
 export const SongGenre = styled.span`
@@ -47,6 +44,7 @@ export const SongGenre = styled.span`
   border-radius: 10rem;
   padding: 0rem 0.5rem 0.5rem 0.5rem;
   font-size: 0.8rem;
+  margin-left: 1rem;
 `;
 
 export const CardTextAuthor = styled.span`

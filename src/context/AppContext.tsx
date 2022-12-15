@@ -15,6 +15,7 @@ type AppContextProps = {
   audioRef?: React.MutableRefObject<HTMLAudioElement | undefined>;
   duration?: number;
   currentTime?: number;
+  setCurrentTime?: (currentTime: number | undefined) => void;
 };
 export const AppContext = createContext<AppContextProps>({});
 
@@ -63,6 +64,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         setSongsList,
         duration,
         currentTime,
+        setCurrentTime,
       }}
     >
       {children}

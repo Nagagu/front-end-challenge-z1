@@ -17,6 +17,7 @@ export const Thumbnail = styled.img`
 export const SongInfo = styled.div``;
 export const SongName = styled(Text)`
   color: white;
+  margin-left: 1rem;
 `;
 
 export const SongAuthor = styled.div``;

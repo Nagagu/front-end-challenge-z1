@@ -44,9 +44,6 @@ export const SongCard = ({ song }: SongCardProps): JSX.Element => {
           </Text>
           <SongDetailsWrapper>
             <PlayButton onClick={handleOpenAudioPlayer} />
-            <SongDuration tag="span" variant="caption">
-              5 min
-            </SongDuration>
             <SongGenre>
               {' '}
               {song.genre.charAt(0).toUpperCase() +

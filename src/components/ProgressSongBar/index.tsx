@@ -4,7 +4,8 @@ import { Container, Duration, ProgressBar } from './styles';
 import { AppContext } from '../../context/AppContext';
 
 export const ProgressSongBar = () => {
-  const { audioRef, duration, currentTime } = useContext(AppContext);
+  const { audioRef, duration, currentTime, setCurrentTime } =
+    useContext(AppContext);
   const progressBar = useRef(null); // reference our progress bar
   // const [duration, setDuration] = useState<number | undefined>(0);
 
@@ -18,17 +19,23 @@ export const ProgressSongBar = () => {
     return `${returnedMinutes}:${returnedSeconds}`;
   };
 
+  const onScrub = (value: number) => {
+    if (audioRef?.current) {
+      audioRef.current.currentTime = value;
+      setCurrentTime && setCurrentTime(value);
+    }
+  };
+
   return (
     <Container>
       <Duration>{calculateTime(currentTime ?? 0)}</Duration>
       <ProgressBar
         type="range"
-        // value={props.value}
+        value={currentTime}
         id="myRange"
-        onChange={() => console.log(audioRef?.current?.currentTime)}
+        max={duration}
+        onChange={(e) => onScrub(Number(e.target.value))}
         ref={progressBar as any}
-        // onMouseUp={props.onMouseUp}
-        // onTouchEnd={props.onTouchEnd}
       />
       <Duration>{calculateTime(duration ?? 0)}</Duration>
     </Container>

@@ -12,12 +12,17 @@ export const DetailsSong = () => {
     <Container>
       <Thumbnail src={playingSong?.image} alt="Song Image" />
       <SongInfo>
-        <SongName tag="p" variant="captionBold">
+        {/* <SongName tag="p" variant="captionBold">
+          <>{playingSong?.name}</>
+        </SongName> */}
+
+        <SongName tag="span" variant="body">
           <>{playingSong?.name}</>
         </SongName>
-        {/* <Text tag="p" variant="caption">
-          <>{playingSong?.author}</>
-        </Text> */}
+
+        <SongName tag="p" variant="body2">
+          <>{playingSong?.author.name}</>
+        </SongName>
       </SongInfo>
     </Container>
   );

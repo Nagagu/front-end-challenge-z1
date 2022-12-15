@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import Play from '$/assets/icons/playButton.svg';
-import Pause from '$/assets/icons/pause.svg';
+import Play from '$/assets/icons/playButton2.svg';
+import Pause from '$/assets/icons/pause2.svg';
 
 export const PlayButton = styled(Play)`
-  width: 3em;
   cursor: pointer;
-
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-top: 0.8rem;
   & path {
     fill: ${({ theme }) => theme.color.white};
   }
@@ -18,7 +19,9 @@ export const PlayButton = styled(Play)`
 `;
 
 export const PauseButton = styled(Pause)`
-  width: 3em;
+  width: 3.8rem;
+  height: 3.8rem;
+  margin-top: 0.7rem;
   cursor: pointer;
 
   & path {
