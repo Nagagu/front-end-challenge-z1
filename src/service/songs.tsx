@@ -22,8 +22,10 @@ import { Data } from './types';
 // };
 
 const GET_SONGS = gql`
-  query SongsQuery($keyWord: String!, $offset: Int!, $limit: Int!) {
-    songs(search: {$keyWord}, pagination: { limit: $limit, offset: $offset }) {
+  # query SongsQuery($keyWord: String!, $offset: Int!, $limit: Int!) {
+  query MyQuery {
+    # songs(search: {$keyWord}, pagination: { limit: $limit, offset: $offset }) {
+    songs(pagination: { limit: 10, offset: 10 }) {
       songs {
         id
         name
