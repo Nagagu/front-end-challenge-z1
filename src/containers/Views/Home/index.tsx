@@ -1,12 +1,15 @@
 import { Text } from '$/components/Text';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { AudioPlayer } from '../../../components/AudioPlayer';
-import { SongList } from '../../../components/SongList';
+import { SongList } from '../../../components/SongList/Index';
 import { AppContext } from '../../../context/AppContext';
 import { Container, SearchInput } from './styles';
+import { useNearScreen } from '../../../utils/hooks/useNearScreen';
 
 function HomeView(): JSX.Element {
   const { playingSong } = useContext(AppContext);
+  const [isNear, el] = useNearScreen();
+  console.log(isNear);
   return (
     <Container>
       <Text tag="h1" variant="title1">
@@ -15,6 +18,7 @@ function HomeView(): JSX.Element {
       <SearchInput placeholder="Search by title, genre..." />
       <SongList />
       {playingSong && <AudioPlayer />}
+      <div ref={el as any}></div>
     </Container>
   );
 }

@@ -1,4 +1,4 @@
-import { Data, Song } from '../../service/types';
+import { Data, Song } from '../../../service/types';
 
 export type audioManager = {
   GoNextSong: () => void;

@@ -22,10 +22,8 @@ import { Data } from './types';
 // };
 
 const GET_SONGS = gql`
-  # query SongsQuery($keyWord: String!, $offset: Int!, $limit: Int!) {
-  query MyQuery {
-    # songs(search: {$keyWord}, pagination: { limit: $limit, offset: $offset }) {
-    songs(pagination: { limit: 10, offset: 10 }) {
+  query SongsQuery($keyWord: String!, $offset: Int!, $limit: Int!) {
+    songs(search: $keyWord, pagination: { limit: $limit, offset: $offset }) {
       songs {
         id
         name
@@ -48,8 +46,10 @@ const GET_SONGS = gql`
   }
 `;
 
-export const useFetch = () => {
-  const { loading, error, data } = useQuery<Data>(GET_SONGS);
+export const useFetch = (keyWord: string, limit: number, offset: number) => {
+  const { loading, error, data } = useQuery<Data>(GET_SONGS, {
+    variables: { keyWord: keyWord, limit: limit, offset: offset },
+  });
   const { setSongsList } = useContext(AppContext);
   setSongsList && setSongsList(data);
   return { loading, error, data };

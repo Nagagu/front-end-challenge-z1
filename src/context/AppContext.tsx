@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { SearchInputProps } from '../components/SearchInput/types';
 import { Data, Song } from '../service/types';
 
 type AppContextProps = {
@@ -16,6 +17,8 @@ type AppContextProps = {
   duration?: number;
   currentTime?: number;
   setCurrentTime?: (currentTime: number | undefined) => void;
+  searchVal?: string;
+  setSearchVal?: (searchVal: string | undefined) => void;
 };
 export const AppContext = createContext<AppContextProps>({});
 
@@ -25,7 +28,8 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const audioRef = useRef<HTMLAudioElement>();
   const [duration, setDuration] = useState<number>();
   const [currentTime, setCurrentTime] = useState<number>();
-
+  const [searchVal, setSearchVal] = useState<string>('');
+  console.log(searchVal);
   useEffect(() => {
     const newAudio = new Audio(playingSong?.audio?.url);
     newAudio.ondurationchange = () => {
@@ -65,6 +69,8 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         duration,
         currentTime,
         setCurrentTime,
+        searchVal,
+        setSearchVal,
       }}
     >
       {children}

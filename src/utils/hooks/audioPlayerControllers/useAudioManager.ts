@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { AppContext } from '../../context/AppContext';
-import { Song } from '../../service/types';
+import { AppContext } from '../../../context/AppContext';
+import { Song } from '../../../service/types';
 
 export const useAudioManager = () => {
   const { songsList, playingSong, setPlayingSong, audioRef } =

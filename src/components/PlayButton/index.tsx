@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAudioManager } from '../../utils/audioPlayerControllers/useAudioManager';
+import { useAudioManager } from '../../utils/hooks/audioPlayerControllers/useAudioManager';
 
 import { PlayButton as PlayButtonDefault } from './styles';
 import { PauseButton as PauseButtonDefault } from './styles';
