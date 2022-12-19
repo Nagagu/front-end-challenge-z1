@@ -7,8 +7,14 @@ export const Container = styled.aside`
 
   width: 15rem;
   height: 100vh;
-
-  background-color: ${({ theme }) => theme.color.grayscale50};
+  background: rgb(247, 246, 248);
+  background: linear-gradient(
+    214deg,
+    rgba(247, 246, 248, 1) 0%,
+    rgb(253 253 253) 72%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  /* background-color: ${({ theme }) => theme.color.grayscale50}; */
 `;
 
 export const UserInfoContainer = styled.div`

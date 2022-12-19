@@ -1,6 +1,10 @@
-// import styled from "styled-components";
-// import { SongList } from ".";
+import styled from 'styled-components';
 
-// export const ss = styled(div)`
-//   margin-block-start: 1.375rem;
+export const Container = styled.div`
+  margin-top: 3rem;
+`;
+
+// export const SongList = styled(DefaultSongList)`
+//   background-color: red;
+//   width: 40px;
 // `;

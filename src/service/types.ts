@@ -11,7 +11,7 @@ export type Song = {
 };
 export type Data = {
   songs: {
-    songs: [Song];
+    songs: Song[];
   };
 };
 export type Error = {
