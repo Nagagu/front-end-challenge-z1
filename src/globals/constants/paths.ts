@@ -1,4 +1,4 @@
 export const PATHS = {
-  HOME: 'https://z1.digital/',
+  HOME: 'https://nagagu.github.io/personalweb/main',
   EXPLORE: '/',
 };
