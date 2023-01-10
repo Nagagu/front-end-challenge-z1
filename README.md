@@ -9,8 +9,6 @@ yarn install
 yarn next dev
 ```
 
-[z1-front-end-challenge-eight.vercel.app](https://z1-front-end-challenge-eight.vercel.app/)
-
 ## Stack 👷🏻‍♀️
 
 ![image](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
