@@ -9,7 +9,9 @@
     "lint": "eslint .*.js *.js .storybook/*.js src --max-warnings=0",
     "lint:fix": "yarn lint --fix",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "$": "link:./src",
@@ -50,6 +52,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0",
     "next-images": "^1.8.4",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"

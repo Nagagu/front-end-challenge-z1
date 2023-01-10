@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { ProgressBar } from '../ProgressSongBar/styles';
-import Previous from '$/assets/icons/previous.svg';
 
 export const AudioPlayerContainer = styled.div`
   height: 6rem;
