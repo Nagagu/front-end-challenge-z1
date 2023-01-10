@@ -4,7 +4,7 @@ import { Container, SongInfo, SongName, Thumbnail } from './styles';
 
 import React from 'react';
 export const DetailsSong = () => {
-  const { setPlayingSong, playingSong } = useContext(AppContext);
+  const { playingSong } = useContext(AppContext);
   return (
     <Container>
       <Thumbnail src={playingSong?.image} alt="Song Image" />

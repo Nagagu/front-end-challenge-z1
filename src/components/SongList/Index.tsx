@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { InView } from 'react-intersection-observer';
 import { AppContext } from '../../context/AppContext';
 import { useFetch } from '../../service/songs';
@@ -7,7 +7,7 @@ import { Text } from '../Text';
 import { Container } from './styles';
 
 export const SongList = (): JSX.Element => {
-  const { searchVal, setSearchVal } = useContext(AppContext);
+  const { searchVal } = useContext(AppContext);
   const elementsPerPage = 4;
   const { data, fetchMore } = useFetch(searchVal!, elementsPerPage, 0);
 

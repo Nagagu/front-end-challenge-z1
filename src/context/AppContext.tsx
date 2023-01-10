@@ -17,7 +17,7 @@ type AppContextProps = {
   currentTime?: number;
   setCurrentTime?: (currentTime: number | undefined) => void;
   searchVal?: string;
-  setSearchVal?: (searchVal: string | undefined) => void;
+  setSearchVal?: React.Dispatch<React.SetStateAction<string>> | undefined;
 };
 export const AppContext = createContext<AppContextProps>({});
 

@@ -1,5 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Data } from './types';
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Previous from '$/assets/icons/previous.svg';
 import { Text } from '../Text';
 export const Container = styled.div`
   display: flex;

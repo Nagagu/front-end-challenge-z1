@@ -31,5 +31,5 @@ export const useNearScreen = ({ rootMargin = '0px' } = {}) => {
     [el, rootMargin],
   );
 
-  return [isNear, el];
+  return [el];
 };

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import play from '$/assets/icons/playButton.svg';
-import { Text } from '../Text';
 
 export const Container = styled.div`
   margin: 30px 0;

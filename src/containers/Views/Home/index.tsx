@@ -8,7 +8,7 @@ import { useNearScreen } from '../../../utils/hooks/useNearScreen';
 
 function HomeView(): JSX.Element {
   const { playingSong } = useContext(AppContext);
-  const [isNear, el] = useNearScreen();
+  const [el] = useNearScreen();
 
   return (
     <Container>
