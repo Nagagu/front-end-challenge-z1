@@ -16,12 +16,13 @@ export const FavButton = ({ song }: FavButtonProps) => {
   const handleSaveFavouriteSong = () => {
     setIsFavourite(!isFavourite);
   };
-
+  console.log(song.name + ' --> ' + isFavourite);
   useEffect(() => {
-    const favourites = getFavourites();
-    if (isFavourite) favourites.push(song.id);
-    else {
-      favourites.filter((o) => o !== song.id);
+    let favourites = getFavourites();
+    if (isFavourite && !favourites.includes(song.id)) {
+      favourites.push(song.id);
+    } else if (!isFavourite) {
+      favourites = favourites.filter((o) => o !== song.id);
     }
     localStorage.setItem('favouriteSong', JSON.stringify(favourites));
   }, [isFavourite]);

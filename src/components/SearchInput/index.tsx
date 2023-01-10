@@ -1,11 +1,10 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { Container, Input, SearchLineIcon } from './styles';
 import { SearchInputProps } from './types';
 
 export const SearchInput = ({ placeholder, className }: SearchInputProps) => {
   const { searchVal, setSearchVal } = useContext(AppContext);
-  // const [searchVal, setSearchVal] = useState('');
 
   const handleInput = (e: any) => {
     setSearchVal && setSearchVal(e.target.value);

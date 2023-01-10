@@ -5,7 +5,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { SearchInputProps } from '../components/SearchInput/types';
 import { Data, Song } from '../service/types';
 
 type AppContextProps = {
@@ -29,7 +28,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [duration, setDuration] = useState<number>();
   const [currentTime, setCurrentTime] = useState<number>();
   const [searchVal, setSearchVal] = useState<string>('');
-  console.log(searchVal);
+
   useEffect(() => {
     const newAudio = new Audio(playingSong?.audio?.url);
     newAudio.ondurationchange = () => {

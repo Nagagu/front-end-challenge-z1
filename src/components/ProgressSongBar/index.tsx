@@ -1,5 +1,4 @@
-import styles from './Progress.module.css';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Container, Duration, ProgressBar } from './styles';
 import { AppContext } from '../../context/AppContext';
 
@@ -7,10 +6,6 @@ export const ProgressSongBar = () => {
   const { audioRef, duration, currentTime, setCurrentTime } =
     useContext(AppContext);
   const progressBar = useRef(null); // reference our progress bar
-  // const [duration, setDuration] = useState<number | undefined>(0);
-
-  console.log(duration);
-
   const calculateTime = (secs: number) => {
     const minutes = Math.floor(secs / 60);
     const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;

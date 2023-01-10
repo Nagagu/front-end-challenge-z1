@@ -3,24 +3,6 @@ import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Data } from './types';
 
-// const useFetch = () => {
-//   const [data, setData] = useState<Data | undefined>(undefined);
-//   const [error, setError] = useState<Error>(null);
-//   const [loading, setLoading] = useState<Boolean>(false);
-
-//   const GET_SONGS = gql`
-//     query MyQuery {
-//       songs(pagination: { limit: 10, offset: 10 }) {
-//         songs {
-//           id
-//           name
-//         }
-//       }
-//     }
-//   `;
-
-// };
-
 const GET_SONGS = gql`
   query SongsQuery($keyWord: String!, $offset: Int!, $limit: Int!) {
     songs(search: $keyWord, pagination: { limit: $limit, offset: $offset }) {
@@ -74,11 +56,8 @@ export const useFetch = (keyWord: string, limit: number, offset: number) => {
           songs: { ...previousQueryResult.songs, songs: newSongList },
         };
         return result;
-        //return {...previousQueryResult,songs:{...previousQueryResult.songs, songs: [...previousQueryResult.songs.songs, options.fetchMoreResult.songs.songs] }}
       },
     });
 
   return { loading, error, data, fetchMore: customFetchMore, refetch };
-  // console.log(data);
-  // return <>{data?.songs.songs.map((o) => o.name)}</>;
 };

@@ -22,7 +22,6 @@ export const SongList = (): JSX.Element => {
       {data && (
         <InView
           onChange={async (inView) => {
-            // const currentLength = data.songs.songs || 0;
             if (inView) {
               await fetchMore(
                 searchVal!,

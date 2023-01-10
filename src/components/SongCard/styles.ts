@@ -57,21 +57,6 @@ export const CardTextBody = styled.p`
   font-size: 15px;
   font-weight: 300;
 `;
-
-// export const PlayButton = styled.img`
-//   display: block;
-//   width: 3rem;
-//   height: 3rem;
-//   margin-left: -5px;
-
-//   &:hover {
-//     -ms-transform: scale(1.05); /* IE 9 */
-//     -webkit-transform: scale(1.05); /* Safari 3-8 */
-//     transform: scale(1.05);
-//     cursor: pointer;
-//   }
-// `;
-
 export const PlayButton = styled(play)`
   width: 2em;
   height: 2em;

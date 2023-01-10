@@ -1,20 +1,15 @@
 import React from 'react';
 import {
   CardImage,
-  CardTextAuthor,
-  CardTextBody,
-  // CardTextTitle,
   CardTextWrapper,
   Container,
   InfoSongWrapper,
   PlayButton,
   SongDetailsWrapper,
-  SongDuration,
   SongGenre,
 } from './styles';
 import { SongCardProps } from './types';
 import { useContext } from 'react';
-import play from '$/assets/play.png';
 import { Text } from '../Text';
 import { AppContext } from '../../context/AppContext';
 import { FavButton } from '../FavButton';
@@ -33,9 +28,6 @@ export const SongCard = ({ song }: SongCardProps): JSX.Element => {
           <Text tag="span" variant="bodyBold">
             {song.name}
           </Text>
-          {/* <CardTextTitle> {song.name}</CardTextTitle> */}
-          {/* <CardTextAuthor> {song.author.name} </CardTextAuthor> */}
-          {/* <CardTextBody> {song.description} </CardTextBody> */}
           <Text tag="span" variant="body">
             {song.author.name}
           </Text>

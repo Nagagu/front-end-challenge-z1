@@ -6,9 +6,6 @@ export const useAudioManager = () => {
   const { songsList, playingSong, setPlayingSong, audioRef } =
     useContext(AppContext);
 
-  console.log('managerplayingSong', playingSong);
-  console.log('managersongsList', songsList);
-  console.log('manager', audioRef);
   const GoNextSong = () => {
     if (!songsList?.songs?.songs) return;
     const indexOfCurrentSong = songsList?.songs?.songs?.indexOf(
@@ -39,10 +36,6 @@ export const useAudioManager = () => {
     audioRef?.current?.duration ?? 0;
   };
 
-  // const getControllerIcon = () => {
-  //   let icon = IsPlayingSong() ? Play : Pause;
-  //   return icon;
-  // };
   return {
     GoNextSong,
     GoPreviousSong,
@@ -50,6 +43,5 @@ export const useAudioManager = () => {
     PauseSong,
     IsPlayingSong,
     GetDuration,
-    // getControllerIcon,
   };
 };

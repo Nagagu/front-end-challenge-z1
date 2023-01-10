@@ -8,7 +8,6 @@ export const AudioPlayerContainer = styled.div`
   bottom: 0;
   right: 0;
   background-color: ${({ theme }) => theme.color.grayscale900};
-  //#282858;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -21,7 +20,5 @@ export const SongControllers = styled.div`
   margin-top: 0.8rem;
   margin-left: 30rem;
 `;
-
-// export const ProgressSongBar = styled(ProgressBar)``;
 
 export const BarPlayButton = styled.div``;
