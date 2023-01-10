@@ -9,6 +9,8 @@ yarn install
 yarn next dev
 ```
 
+You can find the web page published here ---> https://z1audioplayer-er6dcn9lv-nagagu.vercel.app/
+
 ## Stack 👷🏻‍♀️
 
 ![image](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
